@@ -1,0 +1,34 @@
+<!--index.wxml-->
+<view class="container">
+<!--用户信息视图，显示用户的头像和昵称-->
+  <view class="userinfo">
+  <!--检查用户是否已经授权访问他们的开放数据-->
+    <block wx:if="{{canIUseOpenData}}" calss="userinfo-opendata">
+<!--用户头像的视图，用于显示用户的头像-->
+      <view class="userinfo-avatar" bindtap="bindViewTap">
+      <!--开放数据标签，用于显示用户的头像URL-->
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+<!--开放数据标签，用于显示用户的昵称-->
+      <open-data type="userNickName"></open-data>
+    </block>
+<!--检查用户是否已经授权访问他们的开放数据-->
+    <block wx:elif="{{!hasUserInfo}}">
+    <!--一个按钮，用于获取用户的头像和昵称-->
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+      <!--一个按钮，用于获取用户的头像和昵称-->
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <!--视图，用于提示用户更新微信版本到1.4.4或更高版本-->
+      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+    </block>
+    <!--条件块，用于检查用户是否已经授权访问他们的开放数据-->
+    <block wx:else>
+    <!--用户头像的图片视图，用于显示用户的头像-->
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <!--文本视图，用于显示用户的昵称-->
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <!--按钮，启动登录过程-->
+  <button bindtap="_Nextstep" type="primary" class="denglu">授权登录</button>
+</view>

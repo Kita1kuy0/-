@@ -1,0 +1,19 @@
+<!--pages/index/wxinfo.wxml-->
+<!--按钮，用于上传头像-->
+<!--open-type="chooseAvatar"表示打开系统相册选择图片-->
+<button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+<!--图片，用于显示用户选择的头像-->
+    <image class="avatar" src="{{avatarUrl}}"></image>
+</button>
+<!--表单，用于填写用户的昵称-->
+<form bindsubmit="_Queding">
+    <view class="cu-form-group">
+        <view class="title">昵称</view>
+        <!--输入框，用于填写用户的昵称-->
+        <!--输入框的类型为昵称;输入框的提示文字为“请输入昵称”输入框的名称为“wxname”-->
+        <input style="text-align:right" type="nickname" placeholder="请输入昵称" name="wxname"></input>
+    </view>
+<!--按钮，用于提交表单-->
+    <button form-type="submit" class="cu-btn bg-olive round shadow zformbtn1">确定</button>
+
+</form>

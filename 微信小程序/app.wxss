@@ -1,0 +1,328 @@
+/**app.wxss**/
+
+@import "main.wxss";
+@import "icon.wxss";
+@import "dh.wxss";
+
+.footer{
+  position: fixed;
+  left: 0;
+  bottom:0;
+  z-index: 9;
+  width: 100%;
+}
+
+page{
+  background-color: #f2fdff !important;
+}
+
+page,button, image, input, label, navigator, scroll-view, swiper, textarea, view {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+.loading{
+  width:40%;
+  margin-left:30%;
+  margin-top:30vw;
+  height: 56.2969px;
+}
+
+.card{
+  background-clip: padding-box;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 30%);
+}
+
+.none{
+  width:100%;
+}
+
+.scrollPage {
+  height: 100vh;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 40rpx 0px;
+  justify-content: space-between;
+}
+
+.nav-li {
+  padding: 30rpx;
+  border-radius: 12rpx;
+  width: 95%;
+  margin: 0 2.5% 40rpx;
+  /* background-image: url(https://image.weilanwl.com/color2.0/cardBg.png); */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+.nav-li::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background-color: inherit;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: -10%;
+  border-radius: 10rpx;
+  opacity: 0.2;
+  transform: scale(0.9, 0.9);
+}
+
+.nav-li.cur {
+  color: #fff;
+  background: rgb(94, 185, 94);
+  box-shadow: 4rpx 4rpx 6rpx rgba(94, 185, 94, 0.4);
+}
+
+.nav-title {
+  font-size: 32rpx;
+  font-weight: 300;
+}
+
+.nav-title::first-letter {
+  font-size: 40rpx;
+  margin-right: 4rpx;
+}
+
+.nav-name {
+  font-size: 28rpx;
+  text-transform: Capitalize;
+  margin-top: 20rpx;
+  position: relative;
+}
+
+.nav-name::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40rpx;
+  height: 6rpx;
+  background: #fff;
+  bottom: 0;
+  right: 0;
+  opacity: 0.5;
+}
+
+.nav-name::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100rpx;
+  height: 1px;
+  background: #fff;
+  bottom: 0;
+  right: 40rpx;
+  opacity: 0.3;
+}
+
+.nav-name::first-letter {
+  font-weight: bold;
+  font-size: 36rpx;
+  margin-right: 1px;
+}
+
+.nav-li text {
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+  font-size: 52rpx;
+  width: 60rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+
+.text-light {
+  font-weight: 300;
+}
+
+
+.write-float {
+  position: fixed;
+  right: 60rpx;
+  bottom: 120rpx;
+  width: 100rpx;
+  height: 100rpx;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 50%;
+  border: 1rpx solid #ddd;
+}
+.write-float text{
+  color: #fe7252;
+  font-size: 58rpx;
+  margin-top: 21rpx;
+  display: inline-flex;
+}
+
+
+.write-float2 {
+  position: fixed;
+  right: 60rpx;
+  bottom: 250rpx;
+  width: 100rpx;
+  height: 100rpx;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 50%;
+  border: 1rpx solid #ddd;
+}
+.write-float2 text{
+  color: #fe7252;
+  font-size: 58rpx;
+  margin-top: 21rpx;
+  display: inline-flex;
+}
+
+
+.zymp{
+  width:92%;
+  margin:20rpx 4%;
+  padding:20rpx;
+  height: 320rpx;
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.zympimg1{
+  height: 290rpx;
+  flex-shrink: 0;
+  width: 103.551px;
+}
+
+.zympv1{
+  padding:20rpx 30rpx;
+  width: 100%;
+  position: relative;
+}
+
+.zympname{
+  font-size: 45rpx;
+  font-weight: bold;
+  letter-spacing: 30rpx;
+}
+
+.zympline{
+  width:  100%;
+  height: 6rpx;
+  background-color: white;
+  margin:10rpx 0;
+}
+
+.zymplvsuo{
+  font-size: 33rpx;
+  padding:20rpx 0;
+}
+
+.zympbiaoqian{
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom:0;
+  left:30rpx;
+}
+
+.zympbiaoqian text{
+  font-size: 31rpx;
+  margin-right: 20rpx;
+  font-weight: bold;
+}
+
+
+.zybqzu{
+  padding:20rpx 4% 0 4% ;
+}
+
+.zybqzu > view{
+  font-size: 33rpx;
+  padding:16rpx 4%;
+  margin-right:20rpx;
+  margin-bottom:20rpx;
+}
+
+.ztitlebig{
+  width: 100vw;
+  height: 25vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ztitlebig view{
+  font-size: 40rpx;
+  color:white;
+}
+
+.zformbtn1{
+  width: 60vw !important;
+  margin-top: 100rpx;
+  margin-left: 20vw !important;
+}
+
+.zformbtn2{
+  display: flex;
+  justify-content: space-around;
+}
+
+.zformbtn2 button{
+  width: 40vw !important;
+  margin-top: 50rpx;
+}	
+
+.zyupfileimg{
+  width:25vw;
+}
+
+.zmyheadimg{
+  width:180rpx;
+  height: 180rpx;
+  margin-left: calc(50% - 75rpx);
+  margin-bottom:20rpx;
+  border-radius: 50%;
+}
+
+.shenglue1{
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.shenglue2{
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.shenglue3{
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}

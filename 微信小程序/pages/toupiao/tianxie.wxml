@@ -1,0 +1,45 @@
+<view class="t1">
+  {{info.biaoti}}
+</view>
+<view class="cy">
+  参与人数：{{info.xie || 0}}人
+</view>
+<view class="t2">
+  {{info.shuoming}}
+</view>
+
+<view style="padding-bottom:130rpx">
+<!--使用"block"标签定义了一个块级元素，并使用"wx:for"指令将"ti"数组中的每个元素渲染为一个题目。使用"wx:key"属性指定每个题目的唯一标识符-->
+  <block wx:for="{{ti}}" wx:key="id">
+
+    <view class="timu" wx:if="{{item.type==0}}">
+      <view class="title">{{index+1}}.{{item.biaoti}}<text>【单选题】</text></view>
+      <view class="xuanze">
+      <!--判断用户是否选择了选项A，并设置相应的样式-->
+      <!--使用"data-for"和"data-idx"属性传递事件的参数-->
+        <view class="{{dati[index].huida == 'A' ? 'bg-olive' : ''}}" bindtap="_Danxuan" data-for="A" data-idx="{{index}}">A.{{item.A}}</view>
+        <view class="{{dati[index].huida == 'B' ? 'bg-olive' : ''}}" bindtap="_Danxuan" data-for="B" data-idx="{{index}}">B.{{item.B}}</view>
+        <view class="{{dati[index].huida == 'C' ? 'bg-olive' : ''}}" bindtap="_Danxuan" data-for="C" data-idx="{{index}}">C.{{item.C}}</view>
+        <view class="{{dati[index].huida == 'D' ? 'bg-olive' : ''}}" bindtap="_Danxuan" data-for="D" data-idx="{{index}}">D.{{item.D}}</view>
+      </view>
+    </view>
+
+    <view class="timu" wx:if="{{item.type==1}}">
+      <view class="title">{{index+1}}.{{item.biaoti}}<text>【多选题】</text></view>
+      <view class="xuanze">
+        <view bindtap="_Duoxuan" data-for="A" data-idx="{{index}}" class="{{dati[index].choose.A?'bg-olive':''}}">A.{{item.A}}</view>
+        <view bindtap="_Duoxuan" data-for="B" data-idx="{{index}}" class="{{dati[index].choose.B?'bg-olive':''}}">B.{{item.B}}</view>
+        <view bindtap="_Duoxuan" data-for="C" data-idx="{{index}}" class="{{dati[index].choose.C?'bg-olive':''}}">C.{{item.C}}</view>
+        <view bindtap="_Duoxuan" data-for="D" data-idx="{{index}}" class="{{dati[index].choose.D?'bg-olive':''}}">D.{{item.D}}</view>
+        <view bindtap="_Duoxuan" data-for="E" data-idx="{{index}}" class="{{dati[index].choose.E?'bg-olive':''}}">E.{{item.E}}</view>
+        <view bindtap="_Duoxuan" data-for="F" data-idx="{{index}}" class="{{dati[index].choose.F?'bg-olive':''}}">F.{{item.F}}</view>
+        <view bindtap="_Duoxuan" data-for="G" data-idx="{{index}}" class="{{dati[index].choose.G?'bg-olive':''}}">G.{{item.G}}</view>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class="footer">
+  <view bindtap="_Tijiao" class="cu-btn block bg-blue lg btn">提交</view>
+</view>
+

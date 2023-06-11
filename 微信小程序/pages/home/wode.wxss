@@ -1,0 +1,9 @@
+.head{
+  align-items: center;
+}
+
+.head text{
+  font-size:45rpx;
+  font-weight: bold;
+  margin-left:30rpx;
+}

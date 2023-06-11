@@ -1,0 +1,18 @@
+/* pages/index/wxinfo.wxss */
+.avatar-wrapper {
+  padding: 0;
+  width: 72px !important;
+  border-radius: 8px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.avatar {
+  display: block;
+  width: 72px;
+  height: 72px;
+}
+
+.container {
+  display: flex;
+}

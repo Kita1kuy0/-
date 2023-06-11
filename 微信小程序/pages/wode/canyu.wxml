@@ -1,0 +1,34 @@
+<view class="cu-bar bg-white solid-bottom">
+  <view class='action'>
+    <text class='cuIcon-titles text-blue' style="font-size:40rpx"></text> <text
+      style="font-size:40rpx;font-weight:bolder;color:black">我参与的</text>
+  </view>
+</view>
+
+
+<view class="cu-card article">
+  <block wx:for="{{list}}" wx:key="id">
+    <view class="cu-item shadow">
+    <!--标题-->
+      <view class="title">
+        <view class="text-cut">{{item.biaoti}}</view>
+      </view>
+      <!---->
+      <view class="content">
+        <image src="../images/toupiao.png" mode="aspectFill"></image>
+        <view class="desc">
+          <view class="text-content">
+            <view>创建人：{{item.wxname}}</view>
+            <view>结束日期：{{item.end}}</view>
+            <view>参与人数：{{item.canyu || '0'}}人</view>
+          </view>
+          <!--重新填写-->
+          <!--"wx:if"属性判断"item.sta"的值是否为真。如果为真，则显示一个重新填写按钮-->
+          <view wx:if="{{item.sta}}">
+            <view bindtap="_Tianxie" data-for="{{item.id}}" class="cu-tag bg-blue  round" style="padding:0 40rpx;">重新填写</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

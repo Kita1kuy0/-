@@ -1,0 +1,41 @@
+<view class="cu-bar bg-white" style='margin-top:0rpx;margin-bottom:2rpx;'>
+  <view class='action'>
+    <text class='cuIcon-title text-orange'></text> 多选题
+  </view>
+</view>
+<view class="cu-form-group">
+  <view class='title'>标题</view>
+  <input placeholder="请输入标题" class='radius text-right' value='{{info.biaoti}}' bindinput='_Form'  data-name='biaoti'></input>
+</view>
+<view class="cu-form-group">
+  <view class='title'>A.</view>
+  <input placeholder="输入选项内容" class='radius text-right' value='{{info.A}}' bindinput='_Form' data-name='A'></input>
+</view>
+<view class="cu-form-group">
+  <view class='title'>B.</view>
+  <input placeholder="输入选项内容" class='radius text-right' value='{{info.B}}' bindinput='_Form' data-name='B'></input>
+</view>
+<view class="cu-form-group">
+  <view class='title'>C.</view>
+  <input placeholder="输入选项内容" class='radius text-right' value='{{info.C}}' bindinput='_Form' data-name='C'></input>
+</view>
+<view class="cu-form-group">
+  <view class='title'>D.</view>
+  <input placeholder="输入选项内容" class='radius text-right' value='{{info.D}}' bindinput='_Form' data-name='D'></input>
+</view>
+<view class="cu-form-group">
+  <view class='title'>E.</view>
+  <input placeholder="输入选项内容" class='radius text-right' value='{{info.E}}' bindinput='_Form' data-name='E'></input>
+</view>
+<view class="cu-form-group">
+  <view class='title'>F.</view>
+  <input placeholder="输入选项内容" class='radius text-right' value='{{info.F}}' bindinput='_Form' data-name='F'></input>
+</view>
+<view class="cu-form-group">
+  <view class='title'>G.</view>
+  <input placeholder="输入选项内容" class='radius text-right' value='{{info.G}}' bindinput='_Form' data-name='G'></input>
+</view>
+
+
+
+<view bindtap="_Baocun" class="cu-btn block bg-blue lg btn">保存</view>

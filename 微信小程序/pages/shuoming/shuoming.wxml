@@ -1,0 +1,6 @@
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>使用说明</view>
+  <view class='text-content'>
+    说明内容
+  </view>
+</view>

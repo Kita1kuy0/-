@@ -1,0 +1,74 @@
+<view class="cu-bar bg-white solid-bottom">
+  <view class='action'>
+    <text class='cuIcon-titles text-blue' style="font-size:40rpx"></text> <text
+      style="font-size:40rpx;font-weight:bolder;color:black">我创建的</text>
+  </view>
+</view>
+
+
+<view class="cu-card article">
+<!--遍历-->
+  <block wx:for="{{list}}" wx:key="id">
+    <view class="cu-item shadow">
+      <view class="title">
+        <view class="text-cut">{{item.biaoti}}</view>
+      </view>
+      <view class="content">
+        <image src="../images/toupiao.png" mode="aspectFill"></image>
+        <view class="desc">
+          <view class="text-content">
+            <view>创建人：{{item.wxname}}</view>
+            <view>结束日期：{{item.end}}</view>
+            <view>参与人数：{{item.canyu || '0'}}人</view>
+          </view>
+          <!--审核中-->
+          <view wx:if="{{item.status == 0}}">
+            <view  class="cu-tag bg-blue  round" style="padding:0 40rpx;">审核中
+            </view>
+            <view wx:if="{{item.sta && item.status == 0}}" bindtap="_Edit" data-for="{{item.id}}" class="cu-tag bg-green  round" style="padding:0 20rpx;">修改
+            </view>
+            <view wx:if="{{item.sta && item.status == 0}}" bindtap="_Del" data-for="{{item.id}}" class="cu-tag bg-red  round" style="padding:0 20rpx;">删除</view>
+          </view>
+          <!--暂停-->
+          <view wx:if="{{item.status == 3 && item.sta}}">
+            <view  class="cu-tag bg-orange  round" style="padding:0 40rpx;">已暂停
+            </view>
+            <view bindtap="_Jixv" data-for="{{item.id}}" class="cu-tag bg-green  round" style="padding:0 20rpx;">继续
+            </view>
+          </view>
+          <!--手动结束-->
+          <view wx:if="{{item.status == 4}}">
+            <view  class="cu-tag bg-red " style="padding:0 20rpx;">手动结束
+            </view>
+            <view bindtap="_Res" data-for="{{item.id}}" class="cu-tag bg-blue  round" style="padding:0 20rpx;">查看结果
+            </view>
+          </view>
+          <!---->
+          <view wx:if="{{item.status == 2}}">
+            <view  class="cu-tag bg-red  round" style="padding:0 40rpx;">审核失败理由：{{item.liyou}}
+            </view>
+          </view>
+          <!--时间截止-->
+          <view wx:if="{{item.sta==false && item.status == 1}}">
+            <view bindtap="_Res" data-for="{{item.id}}" class="cu-tag bg-blue  round" style="padding:0 20rpx;">查看结果
+            </view>
+          </view>
+      <!--正常界面-->
+          <view wx:if="{{item.sta && item.status == 1}}">
+            <view bindtap="_Res" data-for="{{item.id}}" class="cu-tag bg-blue  round" style="padding:0 20rpx;">查看结果
+            </view>
+
+            <view bindtap="_Zanting" data-for="{{item.id}}" class="cu-tag bg-orange  round" style="padding:0 20rpx;">暂停
+            </view>
+            <view bindtap="_Jieshu" data-for="{{item.id}}" class="cu-tag bg-red  round" style="padding:0 20rpx;">结束</view>
+          </view>
+          <!---->
+          <view wx:if="{{item.sta && item.status == 2}}">
+            <view class="cu-tag bg-red  round" style="padding:0 40rpx;">未通过审核
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

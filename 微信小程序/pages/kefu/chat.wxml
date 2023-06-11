@@ -1,0 +1,60 @@
+<!--滚动视图容器，用于展示聊天记录-->
+<!--class表示容器的样式，scroll-y表示垂直方向可以滚动，scrollTop表示滚动到顶部的距离-->
+<scroll-view class="s1" scroll-y="auto" scrollTop="{{top}}">
+<!--视图容器，用于包含聊天记录-->
+    <view class="cu-chat">
+    <!--循环语句，用于遍历聊天记录-->
+    <!--wx:for表示遍历list数组，wx:key表示使用id作为循环的唯一标识。-->
+        <block wx:for="{{list}}" wx:key="id">
+        <!--视图容器，用于展示用户自己发送的消息-->
+        <!--判断该聊天记录是自己发送的还是对方发送的-->
+            <view class="cu-item self" wx:if="{{item.who==0}}">
+            <!--视图容器，用于展示消息的内容-->
+            <!--wx:if表示只有当item.neirong不为空时才显示该容器-->
+                <view class="main" wx:if="{{item.neirong!=''}}">
+                <!--视图容器，用于包含消息的内容-->
+                    <view class="content bg-green shadow">
+                    <!--绑定聊天内容的值-->
+                        <text>{{item.neirong}}</text>
+                    </view>
+                </view>
+                <!--用于显示聊天图片，wx:if表示判断是否需要显示该组件-->
+                <view class="main" wx:if="{{item.img!='' && item.img !=null}}">
+                <!--用于显示聊天图片，src表示绑定图片的路径，class表示该图片的样式为radius，mode表示图片的宽度自适应-->
+                    <image src="{{baseimg + item.img}}" class="radius" mode="widthFix"></image>
+                </view>
+                <!--用于显示聊天头像，class=表示该组件的样式为cu-avatar和radius，style表示设置头像的背景图片-->
+                <view class="cu-avatar radius" style="background-image:url('{{item.wxhead}}');"></view>
+            </view>
+
+<!--用于表示一条聊天记录，class表示该聊天记录是对方发送的并不使用样式，wx:if表示判断该聊天记录是自己发送的还是对方发送的-->
+            <view class="cu-item" wx:if="{{item.who==1}}">
+            <!--用于显示聊天头像，class表示该组件的样式为cu-avatar和radius，style表示设置头像的背景图片为客服的图片。-->
+                <view class="cu-avatar radius" style="background-image:url('../images/kefu.png');"></view>
+                <!--用于显示聊天内容，wx:if表示判断是否需要显示该组件-->
+                <view class="main" wx:if="{{item.neirong!=''}}">
+                    <view class="content bg-green shadow">
+                        <text>{{item.neirong}}</text>
+                    </view>
+                </view>
+                <view class="main" wx:if="{{item.img!='' && item.img !=null}}">
+                    <image src="{{baseimg + item.img}}" class="radius" mode="widthFix"></image>
+                </view>
+              
+            </view>
+
+        </block>
+
+    </view>
+</scroll-view>
+
+<!--用于包含输入框和发送按钮-->
+<view class="cu-bar foot input">
+<!--用于输入聊天内容-->
+<!--class表示该组件的底部有一条实线，bindinput表示绑定输入事件为_Form函数，value表示绑定输入框的值为nr变量，maxlength表示最多输入300个字符，cursor-spacing表示设置光标与输入框底部的距离为10像素-->
+  <input class="solid-bottom" bindinput="_Form" value="{{nr}}" style="border:1px solid black;padding:0 10px" maxlength="300" cursor-spacing="10"></input>
+  <!--用于发送聊天内容-->
+    <button bindtap="_Fasong" style="width:150rpx" class="cu-btn bg-green shadow">发送</button>
+    <!--用于发送聊天图片-->
+    <button bindtap="_Tupian" style="width:150rpx;margin-left:15rpx" class="cu-btn bg-blue shadow">图片</button>
+</view>

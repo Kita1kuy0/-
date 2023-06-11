@@ -1,0 +1,9 @@
+<!--logs.wxml-->
+<!--展示一个日志列表-->
+<view class="container log-list">
+<!--"wx:for"指令将"logs"数组中的每个元素渲染为一个"block"元素，其中"wx:key"指令用于指定每个元素的唯一标识符，"wx:for-item"指令用于指定每个元素在模板中的引用名-->
+  <block wx:for="{{logs}}" wx:key="timeStamp" wx:for-item="log">
+  <!--使用"text"元素展示每个日志的日期信息，其中"{{index + 1}}"表示当前元素在数组中的索引加1，"{{log.date}}"表示当前元素的"date"属性值。将"logs"数组中的每个元素渲染为一个日志条目，并按照时间戳的顺序排列。-->
+    <text class="log-item">{{index + 1}}. {{log.date}}</text>
+  </block>
+</view>

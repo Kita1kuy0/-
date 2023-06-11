@@ -1,0 +1,7 @@
+/* pages/toupiao/duoxuan.wxss */
+
+.btn{
+  width:90vw;
+  margin-left: 5vw;
+  margin-top:50rpx;
+}

@@ -1,0 +1,29 @@
+
+<view class="ztitlebig bg-gradual-blue">
+  <view>“{{key}}”的搜索结果</view>
+</view>
+				          
+                        
+<view class="cu-card article">
+  <block wx:for="{{list}}">
+    <view class="cu-item shadow">
+      <view class="title">
+        <view class="text-cut">{{item.biaoti}}</view>
+      </view>
+      <view class="content">
+        <image src="../images/toupiao.png" mode="aspectFill"></image>
+        <view class="desc">
+          <view class="text-content">
+            <view>创建人：{{item.faqi}}</view>
+            <view>结束日期：{{item.end}}</view>
+            <view>参与人数：{{item.canyu || 0}}</view>
+          </view>
+          <view>
+            <view data-for="../toupiao/tianxie?id={{item.id}}" bindtap="_Tz" class="cu-tag bg-blue  round" style="padding:0 40rpx;">参与</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <image src="../images/none.png" class="none" wx:if="{{list.length==0}}"></image>
+</view>

@@ -1,0 +1,86 @@
+/* pages/toupiao/tianxie.wxss */
+
+.t1{
+  font-size: 40rpx;
+  font-weight: bold;
+  text-align: center;
+  margin-top:12rpx;
+}
+
+.cy{
+  text-align: center;
+  font-size:25rpx;
+  color:gray;
+  margin-top:15rpx;
+}
+
+.t2{
+  font-size: 28rpx;
+  padding:30rpx;
+}
+
+
+.timu{
+  background-color: white;
+  width: 92vw;
+  margin:4vw;
+  padding:30rpx;
+}
+
+.timu .title{
+  font-size: 38rpx;
+  font-weight: bold;
+}
+
+.timu .title text{
+  color:gray;
+  font-weight: 300 !important;
+  font-size:33rpx;
+}
+
+.timu input{
+  border:1px solid gray;
+  height: 100rpx;
+  padding:0 20rpx;
+  margin-top:30rpx;
+  border-radius: 10rpx;
+  font-size: 40rpx;
+}
+
+.cz{
+  width:50vw;
+  margin-left:auto;
+}
+
+.cz text{
+  color:#0081ff !important;
+  font-size:30rpx;
+}
+
+.xuanze{
+  margin-top: 20rpx;
+}
+
+.xuanze view{
+  height: 80rpx;
+  font-size: 30rpx;
+  padding:10rpx;
+  display: flex;
+  align-items: center;
+}
+
+.footer{
+  position: fixed;
+  background-color: white;
+  border-top:1px solid gray;
+  bottom:0;
+  left:0;
+  display: flex;
+  align-items: center;
+  height: 130rpx;
+}
+
+.btn{
+  width:90vw;
+  margin-left: 5vw;
+}

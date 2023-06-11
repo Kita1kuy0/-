@@ -1,0 +1,67 @@
+.footer{
+  position: fixed;
+  bottom:0;
+  left:0;
+  height: 100rpx;
+  z-index: 9;
+  display: flex;
+}
+
+.footer > view{
+  display: flex;
+  width: 50vw;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  color:white;
+}
+
+.timu{
+  background-color: white;
+  width: 92vw;
+  margin:4vw;
+  padding:30rpx;
+}
+
+.timu .title{
+  font-size: 38rpx;
+  font-weight: bold;
+}
+
+.timu .title text{
+  color:gray;
+  font-weight: 300 !important;
+  font-size:33rpx;
+}
+
+.timu input{
+  border:1px solid gray;
+  height: 100rpx;
+  padding:0 20rpx;
+  margin-top:30rpx;
+  border-radius: 10rpx;
+  font-size: 40rpx;
+}
+
+.cz{
+  width:50vw;
+  margin-left:auto;
+}
+
+.cz text{
+  color:#0081ff !important;
+  font-size:30rpx;
+}
+
+.xuanze{
+  margin-top: 20rpx;
+}
+
+.xuanze view{
+  height: 80rpx;
+  font-size: 30rpx;
+  padding:10rpx;
+  display: flex;
+  align-items: center;
+}

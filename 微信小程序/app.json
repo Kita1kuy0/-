@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/check",
+    "pages/home/sousuo",
+    "pages/home/home",
+    "pages/home/wode",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/index/wxinfo",
+    "pages/toupiao/add",
+    "pages/toupiao/step2",
+    "pages/toupiao/danxuan",
+    "pages/toupiao/duoxuan",
+    "pages/toupiao/edit",
+    "pages/toupiao/tianxie",
+    "pages/shuoming/shuoming",
+    "pages/wode/canyu",
+    "pages/wode/chuangjian",
+    "pages/kefu/chat",
+    "pages/toupiao/res"
+    ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "在线投票系统",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#0081ff",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "pages/images/tabbar/home.png",
+        "selectedIconPath": "pages/images/tabbar/home_on.png"
+      },
+      {
+        "pagePath": "pages/home/wode",
+        "text": "我的",
+        "iconPath": "pages/images/tabbar/wode.png",
+        "selectedIconPath": "pages/images/tabbar/wode_on.png"
+      }
+    ],
+    "position": "bottom"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

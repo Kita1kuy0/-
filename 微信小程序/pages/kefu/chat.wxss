@@ -1,0 +1,13 @@
+/* pages/chat/chat.wxss */
+page{
+  padding-bottom: 100rpx;
+  background-color: var(--oliveLight);
+}
+
+.cu-avatar{
+  border-radius: 50%;
+}
+
+.s1{
+  height: calc(100vh - 100rpx);
+}

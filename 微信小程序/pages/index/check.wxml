@@ -1,0 +1,2 @@
+<!--显示一个名为"loading.gif"的图片，并设置了图片的样式-->
+<image src="../images/loading.gif" mode="widthFix" class="loading"></image>

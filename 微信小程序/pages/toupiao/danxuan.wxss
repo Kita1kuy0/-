@@ -1,0 +1,7 @@
+/* miniprogram/pages/wenjuan/danxuan.wxss */
+
+.btn{
+  width:90vw;
+  margin-left: 5vw;
+  margin-top:50rpx;
+}

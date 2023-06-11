@@ -1,0 +1,74 @@
+<image src="../images/top.jpg" class="none" mode="widthFix"></image>
+
+<!--搜索框与搜索按钮-->
+<!--组件外层容器-->
+<view class="cu-bar search bg-white">
+<!--搜索框容器-->
+  <view class="search-form round">
+  <!--显示搜索图标-->
+  <text class="cuIcon-search"></text>
+    <!--定义输入框-->
+    <input type="text" bindinput="_Form" value="{{key}}" placeholder="请输入关键词" confirm-type="search"></input>
+  </view>
+  <!--搜索按钮容器-->
+  <view class="action">
+  <!--定义搜索按钮-->
+    <button style="width:200rpx" bindtap="_Sousuo" class="cu-btn bg-green shadow-blur round">搜索</button>
+  </view>
+</view>
+				          
+<!--分类列表-->
+<!--创建滚动视图-->
+<scroll-view scroll-x scroll-with-animation scroll-left="{{scrollLeft}}" class="bg-white nav">
+<!--创建水平列表-->
+  <view class="flex text-center">
+  <!--定义分类列表-->
+  <!--index当前列表的索引值-->
+  <!--根据变量TabCur的值动态设置列表项的类，实现选中状态的效果-->
+  <!--wx:for遍历数组，将数组中的元素渲染成view元素，实现列表的展示-->
+  <!--wx:key属性来为循环中的每个元素指定一个唯一的标识符-->
+  <!--将元素的data-id属性作为参数传递给函数-->
+    <view class="cu-item flex-sub {{index==TabCur?'text-blue cur':''}}" wx:for="{{choose.length}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+    <!--动态显示列表项内容-->
+      {{choose[index].name}}
+    </view>
+  </view>
+</scroll-view>
+          
+<view class="cu-card article">
+<!--遍历list数组中的每个元素-->
+  <block wx:for="{{list}}">
+    <view class="cu-item shadow">
+      <view class="title">
+        <view class="text-cut">{{item.biaoti}}</view>
+      </view>
+      <view class="content">
+      <!--定义了一个图片容器，使用了aspectFill模式，按比例缩放图片-->
+        <image src="../images/toupiao.png" mode="aspectFill"></image>
+        <view class="desc">
+          <view class="text-content">
+            <view>创建人：{{item.faqi}}</view>
+            <view>结束日期：{{item.end}}</view>
+            <view>参与人数：{{item.canyu || 0}}</view>
+          </view>
+          <view>
+          <!--使用了data-for属性，表示点击该文本容器时跳转到../toupiao/tianxie页面，并传递id参数值为item.id-->
+            <view data-for="../toupiao/tianxie?id={{item.id}}" bindtap="_Tz" class="cu-tag bg-blue  round" style="padding:0 40rpx;">参与</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <!--使用了none样式类，表示该图片容器默认不显示。使用了wx:if属性，表示当list数组长度为0时，显示该图片容器-->
+  <image src="../images/none.png" class="none" wx:if="{{list.length==0}}"></image>
+</view>
+
+
+<view class='write-float'>
+<!--跳转链接-->
+<!--choose[TabCur].id的值作为参数fid通过url传递到目标页面-->
+  <navigator  hover-class="none" url="../toupiao/add?fid={{choose[TabCur].id}}">
+  <!--“+”样式-->
+  <text class="cuIcon-add text-orange"></text></navigator>
+</view>
+				          

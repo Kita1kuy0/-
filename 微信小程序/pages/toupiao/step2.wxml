@@ -1,0 +1,66 @@
+<!--展示一个题目列表-->
+<view style="padding-bottom:30rpx">
+<!--循环展示题目列表。"wx:for"属性用于指定要循环的数组，"wx:key"属性用于指定数组中每个元素的唯一标识符-->
+  <block wx:for="{{list}}" wx:key='id'>
+    <view class="timu">
+    <!--题目的序号、标题和类型-->
+      <view class="title">{{index+1}}.{{item.biaoti}}<text>【{{type[item.type]}}】</text></view>
+      <input wx:if="{{item.type==2}}"></input>
+      <view class="xuanze" wx:if="{{item.type<2}}">
+        <view>A.{{item.A}}</view>
+        <view>B.{{item.B}}</view>
+        <view>C.{{item.C}}</view>
+        <view>D.{{item.D}}</view>
+        <view wx:if="{{item.type==1}}">E.{{item.E}}</view>
+        <view wx:if="{{item.type==1}}">F.{{item.F}}</view>
+        <view wx:if="{{item.type==1}}">G.{{item.G}}</view>
+      </view>
+      <view class="cz">
+        <view class="cu-list grid col-3">
+          <view class="cu-item" bindtap="_Xiugai" data-for="{{index}}">
+            <text class="cuIcon-post lg text-blue"></text>
+            <text>修改</text>
+          </view>
+          <view class="cu-item" bindtap="_Shanchu" data-for="{{index}}">
+            <text class="cuIcon-delete lg text-blue"></text>
+            <text>删除</text>
+          </view>
+          <view class="cu-item" bindtap="_Yidong" data-for="{{index}}">
+            <text class="cuIcon-{{index==0?'down':'top'}} lg text-blue"></text>
+            <text>{{index==0?'下':'上'}}移</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <image src="../images/none.png" class="none" wx:if="{{list.length==0}}"></image>
+  <view class="cu-tabbar-height"></view>
+</view>
+
+
+<!--底部操作栏容器-->
+<view class="footer">
+  <view class="bg-blue" bindtap="_Show">添加题目</view>
+  <view class="bg-green" bindtap="_Save">保存发布</view>
+</view>
+<!--弹窗容器-->
+<!--根据"modal"变量的值控制弹窗的显示和隐藏-->
+<view class="cu-modal {{modal=='show'?'show':''}}" bindtap="hideModal">
+  <view class="cu-dialog" catchtap>
+    <radio-group class="block">
+      <view class="cu-list menu text-left">
+        <view class="cu-item">
+          <label class="flex justify-between align-center flex-sub">
+            <view class="flex-sub" bindtap="_Tz" data-for='danxuan'>单选题</view>
+          </label>
+        </view>
+        <view class="cu-item">
+          <label class="flex justify-between align-center flex-sub">
+            <view class="flex-sub" bindtap="_Tz" data-for='duoxuan'>多选题</view>
+          </label>
+        </view>
+      
+      </view>
+    </radio-group>
+  </view>
+</view>
